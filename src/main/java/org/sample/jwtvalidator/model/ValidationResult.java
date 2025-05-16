@@ -25,7 +25,11 @@ public class ValidationResult {
 
     public void print() {
         System.out.println("🔐 JWT Header: " + header);
-        System.out.println("✅ Signature valid: " + signatureValid);
+        if(signatureValid){
+            System.out.println("✅ Signature valid");
+        } else {
+            System.out.println("❌ Signature invalid");
+        }
 
         if (error != null) {
             System.out.println("❌ Error: " + error);
